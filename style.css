@@ -1,19 +1,22 @@
 /* General styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #fafafa;
+    background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
     margin: 0;
     padding: 0;
     color: #333;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Header styles */
 header {
-    background-color: #00bcd4;
+    background-color: #ffc1c1;
     color: white;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
@@ -24,128 +27,98 @@ header h1 {
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #ff8364;
 }
 
-/* Main content */
-main {
-    padding: 40px 20px;
+/* Hero Section */
+.hero {
     text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-h2 {
-    font-size: 2.2em;
-    color: #333;
-}
-
-p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 20px auto;
-    color: #666;
-}
-
-/* Form styles (for login page) */
-form {
-    margin: 30px auto;
-    padding: 30px;
-    background-color: white;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #ffedeb, #ffb5b5);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease;
 }
 
-form input {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 1em;
-    transition: all 0.3s ease;
+.hero h2 {
+    font-size: 2.5em;
+    color: #ff8364;
+    margin: 0;
 }
 
-form input:focus {
-    outline: none;
-    border-color: #00bcd4;
-    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+.hero p {
+    font-size: 1.2em;
+    color: #444;
+    margin: 15px 0;
 }
 
-form button {
-    width: 100%;
-    padding: 15px;
-    background-color: #00bcd4;
+.primary-btn {
+    background-color: #ff8364;
     color: white;
+    padding: 15px 30px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1.2em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-form button:hover {
-    background-color: #0288d1;
+.primary-btn:hover {
+    background-color: #ff5c3b;
 }
 
-/* Error message styles */
-#error {
-    color: red;
-    font-size: 1em;
-    margin-top: 10px;
+/* Chat Box */
+.chat-box {
+    margin: 30px auto;
+    max-width: 90%;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer styles */
-footer {
-    background-color: #00bcd4;
-    color: white;
+.chat-container {
+    background: #ffe8e8;
+    border-radius: 10px;
+    padding: 20px;
     text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-/* Flexbox layout for main content */
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 20px;
+    font-size: 1.2em;
+    color: #888;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 400px;
+.chat-placeholder {
+    border: 2px dashed #ff8364;
+    border-radius: 10px;
+    padding: 50px;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    nav a {
-        font-size: 1em;
-        margin: 0 10px;
-    }
-
-    main {
-        padding: 20px;
-    }
-
-    form {
-        width: 80%;
-    }
+/* User Greeting */
+#user-greeting {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #444;
 }
