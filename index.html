@@ -3,32 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manosthiti</title>
+    <title>Welcome to Manosthiti</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Manosthiti</h1>
+        <h1>Welcome to Manosthiti</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About</a> | 
             <a href="settings.html">Settings</a>
         </nav>
-        <div id="user-greeting" class="user-greeting"></div>
+        <div class="signed-in-info">
+            Signed in as: <span id="signed-in-username"></span>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>Welcome to Manosthiti</h2>
-            <p>Your mental health assistant, tailored for you.</p>
-        </section>
-
-        <section class="locked-feature">
-            <h2>Exclusive Features</h2>
-            <p>Unlock personalized mental health resources, chatbots, and more after signing in.</p>
-        </section>
+        <h2>Welcome, <span id="welcome-username"></span>!</h2>
+        <p>Explore our chatbot and mental health features.</p>
     </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2024 Manosthiti. All rights reserved.</p>
+    </footer>
 </body>
 </html>
