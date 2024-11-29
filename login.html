@@ -5,21 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Manosthiti</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <header>
+        <h1>Login to Manosthiti</h1>
+        <nav>
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
     <main>
-        <section class="login-section">
+        <form id="loginForm">
             <h2>Welcome Back!</h2>
-            <p>Log in to unlock exclusive features and personalized services.</p>
-            <form id="loginForm">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit" class="primary-btn">Log In</button>
-            </form>
-        </section>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit" id="goButton">Go</button>
+            <p id="error"></p>
+        </form>
     </main>
-    <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Manosthiti. All rights reserved.</p>
+    </footer>
 </body>
 </html>
