@@ -1,31 +1,27 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the form from submitting normally
 
-    // Predefined mock credentials
     const mockCredentials = {
         username: "user1",
         password: "password123"
     };
 
-    // Get the values entered by the user
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Check if the credentials match
     if (username === mockCredentials.username && password === mockCredentials.password) {
-        window.location.href = "index.html"; // Redirect to homepage on success
+        localStorage.setItem('loggedInUser', username); // Store username
+        window.location.href = "index.html";
     } else {
         document.getElementById('error').textContent = "Invalid username or password!";
-        document.getElementById('error').style.color = "red";
     }
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('loginForm');
-    form.style.opacity = 0;
-    form.style.transition = "opacity 1s ease-in-out";
 
-    setTimeout(() => {
-        form.style.opacity = 1;
-    }, 300);
+// On page load, display the username if logged in
+document.addEventListener('DOMContentLoaded', () => {
+    const userGreeting = document.getElementById('user-greeting');
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+        userGreeting.textContent = `Hello, ${loggedInUser}!`;
+    }
 });
-
