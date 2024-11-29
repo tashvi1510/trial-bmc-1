@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login to Manosthiti</title>
+    <title>Login - Manosthiti</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,17 +17,20 @@
     </header>
 
     <main>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Login</button>
-        </form>
-
-        <p id="error"></p>
+        <section class="login-section">
+            <h2>Welcome Back!</h2>
+            <p>Log in to access personalized support and chat with our AI-powered assistant.</p>
+            <form id="loginForm" class="login-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit" class="primary-btn">Log In</button>
+                <p id="error" class="error-message"></p>
+            </form>
+        </section>
     </main>
 
     <footer>
