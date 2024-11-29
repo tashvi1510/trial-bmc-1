@@ -1,45 +1,57 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.getElementById("loginForm");
-    const userGreeting = document.getElementById("user-greeting");
+    const goButton = document.getElementById("goButton");
+    const signedInUsername = document.getElementById("signed-in-username");
+    const welcomeUsername = document.getElementById("welcome-username");
     const updateForm = document.getElementById("updateForm");
 
-    // Check login state
-    const username = localStorage.getItem("username");
-    if (username) {
-        userGreeting.textContent = `Welcome, ${username}! (Signed In)`;
-        unlockFeatures();
-    }
+    let jumpCount = 0; // Counter for the playful login button
 
-    // Login handling
+    // Initialize stored credentials or create default ones
+    if (!localStorage.getItem("username")) localStorage.setItem("username", "user123");
+    if (!localStorage.getItem("password")) localStorage.setItem("password", "password123");
+
+    // Playful 'Go' button movement
+    goButton.addEventListener("mouseover", function () {
+        if (jumpCount < 3) {
+            goButton.style.position = "absolute";
+            goButton.style.left = `${Math.random() * 80}%`;
+            goButton.style.top = `${Math.random() * 80}%`;
+            jumpCount++;
+        }
+    });
+
+    // Handle login
     if (loginForm) {
-        loginForm.addEventListener("submit", (e) => {
+        loginForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            const usernameInput = document.getElementById("username").value;
-            const passwordInput = document.getElementById("password").value;
+            const enteredUsername = document.getElementById("username").value;
+            const enteredPassword = document.getElementById("password").value;
 
-            if (usernameInput && passwordInput) {
-                localStorage.setItem("username", usernameInput);
-                localStorage.setItem("password", passwordInput);
+            const storedUsername = localStorage.getItem("username");
+            const storedPassword = localStorage.getItem("password");
+
+            if (enteredUsername === storedUsername && enteredPassword === storedPassword) {
                 alert("Login successful!");
-                window.location.href = "index.html";
+                window.location.href = "index.html"; // Redirect to homepage
             } else {
-                alert("Please enter valid credentials.");
+                document.getElementById("error").textContent = "Invalid username or password!";
             }
         });
     }
 
-    // Unlock features for logged-in users
-    function unlockFeatures() {
-        const lockedFeatures = document.querySelectorAll(".locked-feature");
-        lockedFeatures.forEach((feature) => {
-            feature.classList.remove("locked-feature");
-            feature.classList.add("unlocked-feature");
-        });
+    // Show logged-in username dynamically
+    if (signedInUsername) {
+        signedInUsername.textContent = localStorage.getItem("username");
     }
 
-    // Update username and password
+    if (welcomeUsername) {
+        welcomeUsername.textContent = localStorage.getItem("username");
+    }
+
+    // Update username/password
     if (updateForm) {
-        updateForm.addEventListener("submit", (e) => {
+        updateForm.addEventListener("submit", function (e) {
             e.preventDefault();
             const newUsername = document.getElementById("new-username").value;
             const newPassword = document.getElementById("new-password").value;
@@ -48,10 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (newPassword) localStorage.setItem("password", newPassword);
 
             alert("Account updated successfully!");
-            window.location.href = "index.html";
+            window.location.href = "index.html"; // Refresh changes
         });
     }
 });
-// Pre-defined credentials (optional)
-localStorage.setItem("username", "defaultUser");
-localStorage.setItem("password", "defaultPass");
