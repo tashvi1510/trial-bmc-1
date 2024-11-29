@@ -173,3 +173,51 @@ nav a:hover {
     color: #777;
     font-size: 1em;
 }
+
+/* Login Page Styles */
+.login-section {
+    margin: 30px auto;
+    max-width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-section h2 {
+    color: #ff8364;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.login-section p {
+    color: #777;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    font-size: 1em;
+    color: #444;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    display: none;
+}
+
