@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings - Manosthiti</title>
+    <title>Account Settings</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Settings</h1>
+        <h1>Account Settings</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Logout</a>
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Account Settings</h2>
-            <form id="updateForm">
-                <label for="new-username">Update Username</label>
-                <input type="text" id="new-username" placeholder="Enter new username">
-                <label for="new-password">Update Password</label>
-                <input type="password" id="new-password" placeholder="Enter new password">
-                <button type="submit" class="primary-btn">Save Changes</button>
-            </form>
-        </section>
+        <form id="updateForm">
+            <h2>Update Your Account</h2>
+            <label for="new-username">New Username:</label>
+            <input type="text" id="new-username" placeholder="Enter new username">
+
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" placeholder="Enter new password">
+
+            <button type="submit">Save Changes</button>
+        </form>
     </main>
-    <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Manosthiti. All rights reserved.</p>
+    </footer>
 </body>
 </html>
