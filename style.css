@@ -1,223 +1,134 @@
-/* General styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    color: #333;
-    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
+body {
+    background: linear-gradient(to right, #d8e3ff, #f9d5f0);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header */
 header {
-    background-color: #ffc1c1;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin: 0;
+    font-size: 1.8rem;
+    color: #5a67d8;
 }
 
-nav a {
-    color: white;
+header nav a {
+    margin: 0 1rem;
     text-decoration: none;
-    font-size: 1.2em;
-    margin: 0 15px;
+    color: #5a67d8;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #ff8364;
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(to bottom, #ffedeb, #ffb5b5);
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 90%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1.5s ease;
-}
-
-.hero h2 {
-    font-size: 2.5em;
-    color: #ff8364;
-    margin: 0;
-}
-
-.hero p {
-    font-size: 1.2em;
-    color: #444;
-    margin: 15px 0;
-}
-
-.primary-btn {
-    background-color: #ff8364;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.primary-btn:hover {
-    background-color: #ff5c3b;
-}
-
-/* Chat Box */
-.chat-box {
-    margin: 30px auto;
-    max-width: 90%;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.chat-container {
-    background: #ffe8e8;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    font-size: 1.2em;
-    color: #888;
-}
-
-.chat-placeholder {
-    border: 2px dashed #ff8364;
-    border-radius: 10px;
-    padding: 50px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+header nav a:hover {
+    color: #f77fbe;
 }
 
 /* User Greeting */
-#user-greeting {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #444;
-}
-/* About Page Styles */
-.about-section, .team-section {
-    margin: 30px auto;
-    max-width: 90%;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.user-greeting {
+    font-size: 1.2rem;
+    color: #4a5568;
+    text-align: right;
 }
 
-.about-section h2, .team-section h2 {
-    color: #ff8364;
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-
-.team-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.team-member {
-    text-align: center;
-    background: #ffe8e8;
-    padding: 20px;
-    border-radius: 10px;
+/* Section Styling */
+section {
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.team-member img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-    object-fit: cover;
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.team-member h3 {
-    color: #ff5c3b;
-    font-size: 1.5em;
-    margin: 10px 0;
+h2 {
+    margin-bottom: 1rem;
+    color: #5a67d8;
 }
 
-.team-member p {
-    color: #777;
-    font-size: 1em;
+button {
+    background-color: #5a67d8;
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-/* Login Page Styles */
+button:hover {
+    background-color: #f77fbe;
+    transform: translateY(-2px);
+}
+
+/* Login Page */
 .login-section {
-    margin: 30px auto;
     max-width: 400px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
     text-align: center;
 }
 
-.login-section h2 {
-    color: #ff8364;
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-
-.login-section p {
-    color: #777;
-    font-size: 1em;
-    margin-bottom: 20px;
-}
-
-.login-form label {
+.login-section input {
     display: block;
-    font-size: 1em;
-    color: #444;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-.login-form input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
 }
 
-.error-message {
-    color: red;
-    font-size: 0.9em;
-    margin-top: 10px;
+.login-section input:focus {
+    border-color: #5a67d8;
+}
+
+.primary-btn {
+    position: relative;
+}
+
+.primary-btn::after {
+    content: "Go";
+    display: inline-block;
+    position: absolute;
+    animation: move 1s infinite;
+}
+
+@keyframes move {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
+
+/* Locked/Unlocked Features */
+.locked-feature {
     display: none;
 }
 
+.unlocked-feature {
+    display: block;
+}
