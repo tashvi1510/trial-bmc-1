@@ -19,3 +19,13 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         document.getElementById('error').style.color = "red";
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('loginForm');
+    form.style.opacity = 0;
+    form.style.transition = "opacity 1s ease-in-out";
+
+    setTimeout(() => {
+        form.style.opacity = 1;
+    }, 300);
+});
+
