@@ -52,3 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+// Pre-defined credentials (optional)
+localStorage.setItem("username", "defaultUser");
+localStorage.setItem("password", "defaultPass");
